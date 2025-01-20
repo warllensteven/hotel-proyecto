@@ -85,7 +85,7 @@ let contHabitaciones = document.getElementById("cont-habitaciones");
 
 const dibujarHabitaciones = (elemHtml) => {
   elemHtml.innerHTML = "";
-  fetch("habitaciones.json")
+  fetch("../data-base/habitaciones.json")
     .then((response) => response.json())
     .then((data) =>
       data.habitaciones.forEach((habitacion, index) => {
@@ -162,7 +162,7 @@ let contServicios = document.getElementById("cont-servicios");
 
 const dibujarServicios = (elemHtml) => {
   elemHtml.innerHTML = "";
-  fetch("habitaciones.json")
+  fetch("../data-base/habitaciones.json")
     .then((response) => response.json())
     .then((data) =>
       data.servicios.forEach((servicio) => {
@@ -230,11 +230,11 @@ formuRegistro.addEventListener("submit", (e) => {
     sessionStorage.setItem("email", emailRegistro);
     sessionStorage.setItem("contraseña", contraRegistro);
 
-    fetch("http://localhost:3000/usuarios")
+    fetch("https://servidor-j7p3.onrender.com/usuarios")
       .then((response) => response.json())
       .then((data) => {
         if (data.length == 0) {
-          fetch("http://localhost:3000/usuarios", {
+          fetch("https://servidor-j7p3.onrender.com/usuarios", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario),
@@ -248,7 +248,7 @@ formuRegistro.addEventListener("submit", (e) => {
               console.log("ya existe");
               pAviso.innerHTML += `<p>El usuario ${emailRegistro} ya esta registrado</p>`;
             } else {
-              fetch("http://localhost:3000/usuarios", {
+              fetch("https://servidor-j7p3.onrender.com/usuarios", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(usuario),
@@ -274,7 +274,7 @@ formuInicio.addEventListener("submit", (e) => {
   let contra = document.getElementById("contraseña").value.trim();
 
   if (email && contra) {
-    fetch("http://localhost:3000/usuarios")
+    fetch("https://servidor-j7p3.onrender.com/usuarios")
       .then((response) => response.json())
       .then((data) => {
         let usuario = data.find(
@@ -328,7 +328,7 @@ const mostrarFormReserva = (modalReserva) => {
 //
 // Función para renderizar el formulario de reservas
 const dibujarFormReservas = (comparador, form) => {
-  fetch("habitaciones.json")
+  fetch("../data-base/habitaciones.json")
     .then((response) => response.json())
     .then((data) => {
       data.habitaciones.forEach((habitacion) => {
@@ -399,10 +399,10 @@ document.addEventListener("click", async (e) => {
         return;
       }
 
-      // Fetch de usuarios y habitaciones desde el servidor
+      // fetch de usuarios y habitaciones desde el servidor
       const [usuariosResponse, habitacionesResponse] = await Promise.all([
-        fetch("http://localhost:3000/usuarios"),
-        fetch("http://localhost:3000/habitaciones"),
+        fetch("https://servidor-j7p3.onrender.com/usuarios"),
+        fetch("https://servidor-j7p3.onrender.com/habitaciones"),
       ]);
 
       if (!usuariosResponse.ok || !habitacionesResponse.ok) {
@@ -452,16 +452,19 @@ document.addEventListener("click", async (e) => {
         });
 
         await Promise.all([
-          fetch(`http://localhost:3000/usuarios/${usuario.id}`, {
+          fetch(`https://servidor-j7p3.onrender.com/usuarios/${usuario.id}`, {
             method: "PUT",
             body: JSON.stringify(usuario),
             headers: { "Content-Type": "application/json" },
           }),
-          fetch(`http://localhost:3000/habitaciones/${habitacion.id}`, {
-            method: "PUT",
-            body: JSON.stringify(habitacion),
-            headers: { "Content-Type": "application/json" },
-          }),
+          fetch(
+            `https://servidor-j7p3.onrender.com/habitaciones/${habitacion.id}`,
+            {
+              method: "PUT",
+              body: JSON.stringify(habitacion),
+              headers: { "Content-Type": "application/json" },
+            }
+          ),
         ]);
 
         console.log(

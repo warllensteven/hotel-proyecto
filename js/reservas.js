@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // dibujo de habitaciones con json
 const dibujarHabitaciones = (elemHtml) => {
   elemHtml.innerHTML = "";
-  fetch("habitaciones.json")
+  fetch("../data-base/habitaciones.json")
     .then((response) => response.json())
     .then((data) =>
       data.habitaciones.forEach((habitacion, index) => {
@@ -160,11 +160,11 @@ formuRegistro.addEventListener("submit", (e) => {
     sessionStorage.setItem("email", emailRegistro);
     sessionStorage.setItem("contraseña", contraRegistro);
 
-    fetch("http://localhost:3000/usuarios")
+    fetch("https://servidor-j7p3.onrender.com/usuarios")
       .then((response) => response.json())
       .then((data) => {
         if (data.length == 0) {
-          fetch("http://localhost:3000/usuarios", {
+          fetch("https://servidor-j7p3.onrender.com/usuarios", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario),
@@ -178,7 +178,7 @@ formuRegistro.addEventListener("submit", (e) => {
               console.log("ya existe");
               pAviso.innerHTML += `<p>El usuario ${emailRegistro} ya esta registrado</p>`;
             } else {
-              fetch("http://localhost:3000/usuarios", {
+              fetch("https://servidor-j7p3.onrender.com/usuarios", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(usuario),
@@ -204,7 +204,7 @@ formuInicio.addEventListener("submit", (e) => {
   let contra = document.getElementById("contraseña").value.trim();
 
   if (email && contra) {
-    fetch("http://localhost:3000/usuarios")
+    fetch("https://servidor-j7p3.onrender.com/usuarios")
       .then((response) => response.json())
       .then((data) => {
         let usuario = data.find(
@@ -332,8 +332,8 @@ document.addEventListener("click", async (e) => {
 
       // Fetch de usuarios y habitaciones desde el servidor
       const [usuariosResponse, habitacionesResponse] = await Promise.all([
-        fetch("http://localhost:3000/usuarios"),
-        fetch("http://localhost:3000/habitaciones"),
+        fetch("https://servidor-j7p3.onrender.com/usuarios"),
+        fetch("https://servidor-j7p3.onrender.com/habitaciones"),
       ]);
 
       if (!usuariosResponse.ok || !habitacionesResponse.ok) {
@@ -383,16 +383,19 @@ document.addEventListener("click", async (e) => {
         });
 
         await Promise.all([
-          fetch(`http://localhost:3000/usuarios/${usuario.id}`, {
+          fetch(`https://servidor-j7p3.onrender.com/usuarios/${usuario.id}`, {
             method: "PUT",
             body: JSON.stringify(usuario),
             headers: { "Content-Type": "application/json" },
           }),
-          fetch(`http://localhost:3000/habitaciones/${habitacion.id}`, {
-            method: "PUT",
-            body: JSON.stringify(habitacion),
-            headers: { "Content-Type": "application/json" },
-          }),
+          fetch(
+            `https://servidor-j7p3.onrender.com/habitaciones/${habitacion.id}`,
+            {
+              method: "PUT",
+              body: JSON.stringify(habitacion),
+              headers: { "Content-Type": "application/json" },
+            }
+          ),
         ]);
 
         console.log(
@@ -443,7 +446,9 @@ formuReserva.addEventListener("submit", async (event) => {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/habitaciones");
+    const response = await fetch(
+      "https://servidor-j7p3.onrender.com/habitaciones"
+    );
     if (!response.ok) {
       throw new Error("Error al obtener las habitaciones");
     }
@@ -551,7 +556,7 @@ const reservas = document.getElementById("tusreservas");
 const mostrarReservas = (reservas) => {
   reservas.innerHTML = "";
   if (sessionStorage.getItem("email")) {
-    fetch("http://localhost:3000/habitaciones")
+    fetch("https://servidor-j7p3.onrender.com/habitaciones")
       .then((response) => response.json())
       .then((data) =>
         data.usuarios.forEach((usuario) => {
