@@ -224,7 +224,7 @@ formuInicio.addEventListener("submit", (e) => {
   }
 });
 
-// Mostrar el formulario de reserva solo si el usuario está logueado
+// Mostrar el formulario de reserva solo si el usuario est logueado
 const modalReserva = document.getElementById("modalReserva");
 
 document.addEventListener("DOMContentLoaded", () => {
