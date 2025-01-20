@@ -378,7 +378,6 @@ document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("confirmar-reserva")) {
     e.preventDefault();
     try {
-      // Verificar que el elemento con id "titulo-buscar" esté en el DOM
       const tituloElement = document.getElementById("titulo-buscar");
       if (!tituloElement) {
         console.error(

@@ -309,7 +309,6 @@ document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("confirmar-reserva")) {
     e.preventDefault();
     try {
-      // Verificar que el elemento con id "titulo-buscar" esté en el DOM
       const tituloElement = document.getElementById("titulo-buscar");
       if (!tituloElement) {
         console.error(
@@ -320,7 +319,7 @@ document.addEventListener("click", async (e) => {
 
       // Obtener los datos del formulario
       const usuarioCorreo = sessionStorage.getItem("email");
-      const tituloHabitacion = tituloElement.textContent; // Usar textContent para obtener el texto del h2
+      const tituloHabitacion = tituloElement.textContent;
       const fechaEntrada = document.getElementById(
         "fechaComienzoReserva"
       ).value;
@@ -453,15 +452,13 @@ formuReserva.addEventListener("submit", async (event) => {
     console.log(habitaciones);
 
     const habitacionesFiltradas = habitaciones.filter((habitacion) => {
-      // Filtrar por número de personas
       const disponibilidadPorPersonas =
         habitacion.personas.includes(cantPersonas);
 
-      // Filtrar por fechas
       const disponiblePorFechas = habitacion.reservas.every((reserva) => {
         const fechaLlegadaReserva = new Date(reserva.llegada);
         const fechaSalidaReserva = new Date(reserva.salida);
-        // Comprobar que las fechas no se solapen
+
         return !(llegada < fechaSalidaReserva && salida > fechaLlegadaReserva);
       });
 
