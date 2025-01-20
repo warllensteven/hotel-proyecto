@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+      type="image/x-icon"
+    />
+    <title>Hotel el Rincon de Camila</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="text-gray-800">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="logos flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <img
+              class="h-8 w-auto"
+              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+              alt=""
+            />
+          </a>
+          <h2 class="titulo-hotel text-sm/6 font-semibold">
+            HOTEL EL RINCON DE CAMILA
+          </h2>
+        </div>
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            id="abrir-menu"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-slot="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="landingPage.html" class="opc text-sm/6 font-semibold text-gray-900"
+            >Inicio</a
+          >
+          <a
+            href="landingPage.html#cont-servicios"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Servicios</a
+          >
+          <a
+            href="reservas.html"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Reservas</a
+          >
+          <a
+            href="informacion.html"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Sobre nosostros</a
+          >
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="#"
+            class="reservar opc text-sm/6 font-semibold text-gray-900"
+            id="esquina-registrar"
+            >Registrarse<span aria-hidden="true"></span
+          ></a>
+          <a href="#" class="reservar opc text-sm/6 font-semibold text-gray-900"
+          id="esquina-sesion"
+            >Iniciar sesion <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </nav>
+      <div class="lg:hidden" id="menu-movil" role="dialog" aria-modal="true">
+        <div
+          class="fixed inset-0 z-50 bg-gray-500 bg-opacity-50"
+          id="backdrop"
+        ></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
+            <button
+              type="button"
+              id="cerrar-menu"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Cerrar menu</span>
+              <svg
+                class="size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  href="landingPage.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >Inicio</a
+                >
+                <a
+                  href="landingPage.html#cont-servicios"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >Servicios</a
+                >
+                <a
+                  href="reservas.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >Reservas</a
+                >
+                <a
+                  href="informacion.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >Sobre nosotros</a
+                >
+              </div>
+              <div class="py-6">
+                <a
+                  href="#"
+                  class="reservar -mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >Iniciar sesión</a
+                >
+              </div>
+                            <div class="py-6">
+                <a
+                  href="#"
+                  class="reservar -mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >Registrar</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+          <section class="py-14 px-8 sm:py-32 cont-formu-reservar">
+  <div class="mx-auto px-2 lg:px-4 cont-reservar bg-violet-600">
+    <form
+      class="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-1 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-6"
+      id="formuReserva"
+    >
+      <div class="flex flex-row justify-center lg:px-8">
+        <div class="flex items-center justify-between">
+          <label
+            for="cantPersonas"
+            class="block text-sm font-mex text-white px-2 font-semibold"
+          >N. personas: </label>
+        </div>
+        <div class="mt-2">
+          <input
+            type="number"
+            name="cantPersonas"
+            id="cantPersonas"
+            required
+            class="font-semibold block w-full rounded-md px-3 py-1.5 text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-center lg:px-8">
+        <div class="flex items-center justify-between">
+          <label
+            for="llegada"
+            class="block text-sm text-white px-2 font-semibold"
+          >Llegada: </label>
+        </div>
+        <div class="mt-2">
+          <input
+            type="date"
+            name="llegada"
+            id="llegada"
+            required
+            class="font-semibold block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-center lg:px-8">
+        <div class="flex items-center justify-between">
+          <label
+            for="salida"
+            class="block text-sm text-white font-semibold"
+          >Salida:</label>
+        </div>
+        <div class="mt-2">
+          <input
+            type="date"
+            name="salida"
+            id="salida"
+            required
+            class="font-semibold block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+          />
+        </div>
+      </div>
+
+      <div id="aviso" class="text-red-600"></div>
+      
+      <button
+        type="submit"
+        class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-400 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+        >
+        Buscar
+      </button>
+    </form>
+  </div>
+</section>
+
+    
+    <main class="relative isolate px-4 pt-14 lg:px-6">
+      <div
+        class="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-6"
+        id="cont-habitaciones"
+      ></div>
+    </main>
+
+    <section class="relative isolate px-4 pt-14 lg:px-6" id="resultado"></section>
+
+    <section id="modalReserva" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      
+    </section>
+
+    <section id="tusreservas" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+
+    </section>
+
+
+    <footer class="bg-violet-600 text-white py-6">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-sm font-semibold">
+            &copy; 2025 Hotel El Rincon De Camila. Todos los derechos reservados
+          </p>
+          <ul class="flex space-x-4 mt-4 md:mt-0">
+            <li>
+              <a href="#" class="hover:underline font-semibold"
+                >Politica de privacidad</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline font-semibold"
+                >Terminos y condiciones</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline font-semibold">Contactanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="fixed bottom-4 right-4">
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-green-500 text-white flex items-center justify-center w-16 h-16 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300"
+        aria-label="WhatsApp"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.55 13.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.34-.11-.48.11-.15.22-.55.72-.68.87-.12.15-.25.17-.46.06-.22-.11-.92-.34-1.74-1.07-.65-.58-1.09-1.3-1.22-1.52-.13-.22-.01-.35.1-.46.1-.1.22-.25.34-.38.12-.13.15-.22.22-.36.07-.15.04-.28-.02-.39-.06-.11-.48-1.17-.67-1.62-.18-.44-.36-.38-.48-.38-.12 0-.26-.01-.4-.01-.14 0-.37.06-.56.28-.19.21-.73.71-.73 1.73s.75 2 .85 2.14c.1.13 1.45 2.23 3.5 3.12.49.21.87.33 1.16.42.49.16.93.14 1.28.08.39-.06 1.3-.53 1.48-1.04.18-.51.18-.95.12-1.04-.05-.08-.2-.14-.41-.25z"
+          ></path>
+          <path
+            d="M12.04 0C5.41 0 .02 5.39.02 12.02c0 2.12.55 4.19 1.59 6.02L.01 24l6.19-1.59c1.79 1.02 3.85 1.56 5.91 1.56 6.63 0 12.02-5.39 12.02-12.02S18.67 0 12.04 0zm0 21.8c-1.83 0-3.64-.49-5.2-1.42l-.37-.22-3.68.95.98-3.59-.24-.37C2.78 15.9 2.3 14 2.3 12.02 2.3 6.81 6.82 2.3 12.03 2.3c5.21 0 9.73 4.52 9.73 9.73 0 5.21-4.51 9.73-9.72 9.73z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+
+<div class="modal" id="myModal">
+      <div class="modal-content">
+        <button class="close close btn-close flex my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><span>X</span></button>
+        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+          <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <div class="flex flex-row text-center">          
+              <a href="#" class="-m-1.5 p-1.5">
+            <img
+              class="h-8 w-auto"
+              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+              alt=""
+            />
+          </a>
+          <h2 class="titulo-hotel text-sm/6 font-semibold my-2">
+            HOTEL EL RINCON DE CAMILA
+          </h2></div>
+            <h2
+              class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900"
+            >
+              Inicia sesion con tu cuenta
+            </h2>
+          </div>
+
+          <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form class="space-y-6" action="#" method="POST" id="formuInicio">
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm/6 font-medium text-gray-900"
+                  >Correo electronico</label
+                >
+                <div class="mt-2">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    required
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <label
+                    for="contraseña"
+                    class="block text-sm/6 font-medium text-gray-900"
+                    >Contraseña</label
+                  >
+                </div>
+                <div class="mt-2">
+                  <input
+                    type="password"
+                    name="password"
+                    id="contraseña"
+                    autocomplete="current-password"
+                    required
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  />
+                </div>
+              </div>
+
+              <div class="my-4">
+                <button
+                  type="submit"
+                  class="flex w-full justify-center rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                >
+                  Iniciar sesion
+                </button>
+              </div>
+
+              <div>
+                <div
+                  class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                >
+                  Registrar
+                </div>
+              </div>
+            </form>
+
+            <p class="mt-10 text-center text-sm/6 text-gray-500">
+              Olvidaste tu contraseña?
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal-registro" id="modalRegistro">
+      <div class="modal-content">
+        <button class="close-registro btn-close-registro flex my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><span>X</span></button>
+        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+          <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <div class="flex flex-row text-center">          
+              <a href="#" class="-m-1.5 p-1.5">
+            <img
+              class="h-8 w-auto"
+              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+              alt=""
+            />
+          </a>
+          <h2 class="titulo-hotel text-sm/6 font-semibold my-2">
+            HOTEL EL RINCON DE CAMILA
+          </h2></div>
+            <h2
+              class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900"
+            >
+              Registrate con tu cuenta
+            </h2>
+          </div>
+
+          <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form class="space-y-6" action="#" method="POST" id="formuRegistro">
+              <div>
+                <label
+                  for="emailRegistro"
+                  class="block text-sm/6 font-medium text-gray-900"
+                  >Correo electronico</label
+                >
+                <div class="mt-2">
+                  <input
+                    type="email"
+                    name="emailRegistro"
+                    id="emailRegistro"
+                    autocomplete="email"
+                    required
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between">
+                  <label
+                    for="contraseñaRegistro"
+                    class="block text-sm/6 font-medium text-gray-900"
+                    >Contraseña</label
+                  >
+                </div>
+                <div class="mt-2">
+                  <input
+                    type="password"
+                    name="contraseñaRegistro"
+                    id="contraseñaRegistro"
+                    autocomplete="current-password"
+                    required
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  />
+                </div>
+              </div>
+
+
+              <div>
+                <div id="aviso" class="text-red-600"></div>
+                <button
+                  type="submit"
+                  class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                >
+                  Registrar
+                </button>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+  </body>
+  <script src="js/reservas.js"></script>
+</html>

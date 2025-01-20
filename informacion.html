@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+      type="image/x-icon"
+    />
+    <title>Hotel el Rincon de Camila</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="text-gray-800">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="logos flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <img
+              class="h-8 w-auto"
+              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+              alt=""
+            />
+          </a>
+          <h2 class="titulo-hotel text-sm/6 font-semibold">
+            HOTEL EL RINCON DE CAMILA
+          </h2>
+        </div>
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-slot="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a
+            href="landingPage.html"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Inicio</a
+          >
+          <a
+            href="landingPage.html#cont-servicios"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Servicios</a
+          >
+          <a
+            href="reservas.html"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Reservas</a
+          >
+          <a
+            href="infromacion.html"
+            class="opc text-sm/6 font-semibold text-gray-900"
+            >Sobre nosostros</a
+          >
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="#"
+            class="registrar opc text-sm/6 font-semibold text-gray-900"
+            >Registrarse<span aria-hidden="true"></span
+          ></a>
+          <a href="#" class="opc text-sm/6 font-semibold text-gray-900"
+            >Iniciar sesion <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4 text-violet-600">Ubicación</h2>
+        <p class="text-black-600 mb-6 font-semibold">
+          Nos encontramos en el avillo vial en una zona exclusiva que presta
+          seguridad y cercania a los diferentes puntos de la zona metropolitana
+        </p>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe
+            class="w-full h-full rounded-lg shadow"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11865.238022305966!2d-73.12813510273263!3d7.062249987621902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f18ef59f9a1%3A0xffbf118f3e8f20c!2sZona%20Franca%20Santander!5e0!3m2!1ses!2sco!4v1736961323675!5m2!1ses!2sco"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4 text-violet-600">
+          Información del Hotel
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-black mb-4 font-semibold">
+              Hotel El Rincon De Camila ofrece una experiencia unica para
+              nuestros huespedes. Disfruta de habitaciones de lujo, gastronomia
+              de clase mundial y un servicio excepcional
+            </p>
+            <ul class="list-disc pl-5 space-y-2 text-black font-semibold">
+              <li>✔ Habitaciones comodas y elegantes</li>
+              <li>✔ Piscina para adultos y niños ademas de spa</li>
+              <li>✔ Wi-Fi gratuito en todo el hotel</li>
+              <li>✔ Restaurante y bar</li>
+              <li>✔ Juegos de mesa y espacio de recreacion</li>
+              <li>✔ Parqueadero y estancia</li>
+              <li>✔ Desayuno incluido</li>
+              <li>✔ Yoga y espacios de esparcimiento</li>
+            </ul>
+          </div>
+          <div>
+            <img
+              src="imgs/hotel.png"
+              alt="Imagen del hotel"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-violet-600 text-white py-10 footer">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-sm font-semibold">
+            &copy; 2025 Hotel El Rincon De Camila. Todos los derechos reservados
+          </p>
+          <ul class="flex space-x-4 mt-4 md:mt-0">
+            <li>
+              <a href="#" class="hover:underline font-semibold"
+                >Politica de privacidad</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline font-semibold"
+                >Terminos y condiciones</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline font-semibold">Contactanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="fixed bottom-4 right-4">
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-green-500 text-white flex items-center justify-center w-16 h-16 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300"
+        aria-label="WhatsApp"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.55 13.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.34-.11-.48.11-.15.22-.55.72-.68.87-.12.15-.25.17-.46.06-.22-.11-.92-.34-1.74-1.07-.65-.58-1.09-1.3-1.22-1.52-.13-.22-.01-.35.1-.46.1-.1.22-.25.34-.38.12-.13.15-.22.22-.36.07-.15.04-.28-.02-.39-.06-.11-.48-1.17-.67-1.62-.18-.44-.36-.38-.48-.38-.12 0-.26-.01-.4-.01-.14 0-.37.06-.56.28-.19.21-.73.71-.73 1.73s.75 2 .85 2.14c.1.13 1.45 2.23 3.5 3.12.49.21.87.33 1.16.42.49.16.93.14 1.28.08.39-.06 1.3-.53 1.48-1.04.18-.51.18-.95.12-1.04-.05-.08-.2-.14-.41-.25z"
+          ></path>
+          <path
+            d="M12.04 0C5.41 0 .02 5.39.02 12.02c0 2.12.55 4.19 1.59 6.02L.01 24l6.19-1.59c1.79 1.02 3.85 1.56 5.91 1.56 6.63 0 12.02-5.39 12.02-12.02S18.67 0 12.04 0zm0 21.8c-1.83 0-3.64-.49-5.2-1.42l-.37-.22-3.68.95.98-3.59-.24-.37C2.78 15.9 2.3 14 2.3 12.02 2.3 6.81 6.82 2.3 12.03 2.3c5.21 0 9.73 4.52 9.73 9.73 0 5.21-4.51 9.73-9.72 9.73z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </body>
+</html>

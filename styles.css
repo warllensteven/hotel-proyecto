@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgb(243, 236, 249);
+  background: radial-gradient(
+    circle,
+    rgba(243, 236, 249, 1) 40%,
+    rgba(223, 202, 242, 1) 100%
+  );
+  margin: 0;
+  padding: 0;
+}
+
+.logos {
+  align-items: center;
+}
+
+.titulo-hotel {
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-left: 5px;
+}
+
+.opc {
+  padding: 5px;
+}
+
+.opc:hover {
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 4px;
+}
+
+.registrar {
+  margin-right: 2%;
+}
+
+#cont-carrusel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+}
+
+#carrusel {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background-color: gray;
+}
+
+.left {
+  top: 40%;
+  position: absolute;
+}
+
+.right {
+  top: 40%;
+  left: 90%;
+  position: absolute;
+}
+
+.img-arrows {
+  width: 8%;
+}
+
+#im-carrusel {
+  width: 100%;
+  height: 100%;
+}
+
+.im-carrusel {
+  overflow: hidden;
+}
+
+.img-habitacion:hover {
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 2%;
+}
+
+.footer {
+  margin-top: 4.7%;
+}
+
+.footer-land {
+  width: 100%;
+  position: absolute;
+}
+
+.modal {
+  position: relative;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(219, 217, 219, 0.5);
+}
+
+.modal-content {
+  border-radius: 8px;
+  position: absolute;
+  top: 16%;
+  left: 29%;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.abrir-Registro {
+  background-color: white;
+  color: #4f46e5;
+}
+
+.btn-close {
+  width: 4%;
+  top: -2%;
+  position: absolute;
+  left: 94%;
+}
+
+.modal-registro {
+  position: relative;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(219, 217, 219, 0.5);
+}
+
+.modal-content-registro {
+  border-radius: 8px;
+  position: absolute;
+  top: 16%;
+  left: 29%;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.btn-close-registro {
+  width: 4%;
+  top: -2%;
+  position: absolute;
+  left: 94%;
+}
+
+.cont-reservar {
+  background-color: #dba5e2;
+  padding: 2%;
+  border-radius: 8px;
+}
+
+nav {
+  border-bottom: 3px solid rgb(124 58 237);
+}
+
+@media (max-width: 1624px) {
+  #cont-carrusel {
+    height: 45vh;
+  }
+
+  #carrusel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+  }
+
+  .im-carrusel {
+    overflow: hidden;
+  }
+
+  .modal-content {
+    border-radius: 8px;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .btn-close {
+    width: 10%;
+    top: -3%;
+    position: absolute;
+    left: 89%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .cont-reservar {
+    margin-top: 8%;
+    background-color: #dba5e2;
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .cont-reservar {
+    margin-top: 38%;
+    background-color: #dba5e2;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .cont-formu-reservar {
+    padding: 5%;
+  }
+}

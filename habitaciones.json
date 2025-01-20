@@ -1,0 +1,90 @@
+{
+    "habitaciones": [
+        {
+            "id": 1,
+            "titulo": "Habitacion Sencilla",
+            "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+            "precio": "$60.000",
+            "cantidad": 7,
+            "img": "imgs/sencilla.png",
+            "capacidad": 1
+        },
+        {
+            "id": 2,
+            "titulo": "Habitacion Doble",
+            "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+            "precio": "$100.000",
+            "cantidad": 7,
+            "img": "imgs/doble.png",
+            "capacidad": 2
+        },
+        {
+            "id": 3,
+            "titulo": "Habitacion Doble + Sencilla",
+            "descripcion": "Habitacion con cama doble y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+            "precio": "$120.000",
+            "cantidad": 4,
+            "img": "imgs/doble-sencilla.png",
+            "capacidad": 3
+        },
+        {
+            "id": 4,
+            "titulo": "Habitacion Triple Plus",
+            "descripcion": "Habitacion con tres camas dobles,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+            "precio": "$150.000",
+            "cantidad": 5,
+            "img": "imgs/triple.png",
+            "capacidad": 6
+        },
+        {
+            "id": 5,
+            "titulo": "Familiar",
+            "descripcion": "Habitacion con tres camas dobles y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+            "precio": "$180.000",
+            "cantidad": 4,
+            "img": "imgs/familiar-4.png",
+            "capacidad": 7
+        },
+        {
+            "id": 6,
+            "titulo": "Habitacion Suite Presidencial",
+            "descripcion": "Habitacion con cama doble plus,bañera, jacuzzi,karaoke,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+            "precio": "$200.000",
+            "cantidad": 3,
+            "img": "imgs/suite.png",
+            "capacidad": 3
+        }
+    ],
+    "servicios": [
+        {
+            "id": 1,
+            "descripcion": "Piscinas para grandes y pequeños",
+            "img": "imgs/piscina.png"
+        },
+        {
+            "id": 2,
+            "descripcion": "Spa y Jacuzzi",
+            "img": "imgs/spa.png"
+        },
+        {
+            "id": 3,
+            "descripcion": "Paquete de incluido con desayuno",
+            "img": "imgs/desayuno.png"
+        },
+        {
+            "id": 4,
+            "descripcion": "Paquete de incluido con desayuno",
+            "img": "imgs/estacionamiento.png"
+        },
+        {
+            "id": 5,
+            "descripcion": "Restaurante con gran variedad de platos",
+            "img": "imgs/restaurante.png"
+        },
+        {
+            "id": 6,
+            "descripcion": "Experimenta la estadia",
+            "img": "imgs/experiencia.png"
+        }
+    ]
+}

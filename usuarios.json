@@ -1,0 +1,467 @@
+{
+  "usuarios": [
+    {
+      "correo": "warlenromero14@gmail.com",
+      "contraseña": "12345",
+      "reservas": [
+        {
+          "habitacion_id": 8,
+          "fecha_entrada": "",
+          "fecha_salida": ""
+        },
+        {
+          "habitacion_id": 1,
+          "fecha_entrada": "2025-01-20",
+          "fecha_salida": "2025-01-22"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "habitaciones": [
+    {
+      "id": 1,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [
+        {
+          "fecha_entrada": "2025-01-20",
+          "fecha_salida": "2025-01-22"
+        }
+      ],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Habitacion Sencilla",
+      "descripcion": "Habitacion para una persona con cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$60.000",
+      "cantidad": 10,
+      "img": "imgs/sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [
+        {
+          "fecha_entrada": "",
+          "fecha_salida": ""
+        }
+      ],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 9,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 10,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 12,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 13,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 14,
+      "titulo": "Habitacion Doble",
+      "descripcion": "Habitacion con cama doble o dos camas sencillas,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$100.000",
+      "cantidad": 10,
+      "img": "imgs/doble.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 15,
+      "titulo": "Habitacion Doble + Sencilla",
+      "descripcion": "Habitacion con cama doble y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$120.000",
+      "cantidad": 5,
+      "img": "imgs/doble-sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 16,
+      "titulo": "Habitacion Doble + Sencilla",
+      "descripcion": "Habitacion con cama doble y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$120.000",
+      "cantidad": 5,
+      "img": "imgs/doble-sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 17,
+      "titulo": "Habitacion Doble + Sencilla",
+      "descripcion": "Habitacion con cama doble y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$120.000",
+      "cantidad": 5,
+      "img": "imgs/doble-sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 18,
+      "titulo": "Habitacion Doble + Sencilla",
+      "descripcion": "Habitacion con cama doble y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$120.000",
+      "cantidad": 5,
+      "img": "imgs/doble-sencilla.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 19,
+      "titulo": "Habitacion Triple Plus",
+      "descripcion": "Habitacion con tres camas dobles,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$150.000",
+      "cantidad": 5,
+      "img": "imgs/triple.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 20,
+      "titulo": "Habitacion Triple Plus",
+      "descripcion": "Habitacion con tres camas dobles,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$150.000",
+      "cantidad": 5,
+      "img": "imgs/triple.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 21,
+      "titulo": "Habitacion Triple Plus",
+      "descripcion": "Habitacion con tres camas dobles,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$150.000",
+      "cantidad": 5,
+      "img": "imgs/triple.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 22,
+      "titulo": "Habitacion Triple Plus",
+      "descripcion": "Habitacion con tres camas dobles,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$150.000",
+      "cantidad": 5,
+      "img": "imgs/triple.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 23,
+      "titulo": "Habitacion Triple Plus",
+      "descripcion": "Habitacion con tres camas dobles,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$150.000",
+      "cantidad": 5,
+      "img": "imgs/triple.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 24,
+      "titulo": "Familiar",
+      "descripcion": "Habitacion con tres camas dobles y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$180.000",
+      "cantidad": 5,
+      "img": "imgs/familiar-4.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 25,
+      "titulo": "Familiar",
+      "descripcion": "Habitacion con tres camas dobles y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$180.000",
+      "cantidad": 5,
+      "img": "imgs/familiar-4.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 26,
+      "titulo": "Familiar",
+      "descripcion": "Habitacion con tres camas dobles y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$180.000",
+      "cantidad": 5,
+      "img": "imgs/familiar-4.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 27,
+      "titulo": "Familiar",
+      "descripcion": "Habitacion con tres camas dobles y una cama sencilla,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$180.000",
+      "cantidad": 5,
+      "img": "imgs/familiar-4.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 28,
+      "titulo": "Habitacion Suite Presidencial",
+      "descripcion": "Habitacion con cama doble plus,bañera, jacuzzi,karaoke,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$200.000",
+      "cantidad": 10,
+      "img": "imgs/suite.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 29,
+      "titulo": "Habitacion Suite Presidencial",
+      "descripcion": "Habitacion con cama doble plus,bañera, jacuzzi,karaoke,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$200.000",
+      "cantidad": 10,
+      "img": "imgs/suite.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 30,
+      "titulo": "Habitacion Suite Presidencial",
+      "descripcion": "Habitacion con cama doble plus,bañera, jacuzzi,karaoke,internet,baño,Tv,minibar y acceso a todas las zonas disponibles en el hotel",
+      "precio": "$200.000",
+      "cantidad": 10,
+      "img": "imgs/suite.png",
+      "disponible": true,
+      "fechas": [],
+      "personas": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
