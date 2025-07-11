@@ -1,3 +1,5 @@
+const API = "https://servidor-j7p3.onrender.com";
+
 document.addEventListener("DOMContentLoaded", function () {
   const botonAbrirMenu = document.getElementById("abrir-menu");
   const botonCerrarMenu = document.getElementById("cerrar-menu");
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//carrusel de imagenes
+// Carrusel de imagenes
 let carrusel = document.getElementById("carrusel");
 
 let imgsCarrusel = [
@@ -48,148 +50,106 @@ window.addEventListener("resize", () => {
   contCarrusel = 0;
 });
 
-derecha.addEventListener("click", (e) => {
-  console.log(contCarrusel);
+derecha.addEventListener("click", () => {
   contCarrusel += 1;
-  console.log(contCarrusel);
+  if (contCarrusel >= currentImgsCarrusel.length) contCarrusel = 0;
+
   let im = document.createElement("img");
   im.setAttribute("src", `imgs/${currentImgsCarrusel[contCarrusel]}`);
-  im.setAttribute("id", `im-carrusel`);
+  im.setAttribute("id", "im-carrusel");
+
   let imm = document.getElementById("im-carrusel");
   carrusel.replaceChild(im, imm);
-
-  if (contCarrusel >= 4) {
-    contCarrusel = -1;
-  }
 });
 
-izquierda.addEventListener("click", (e) => {
-  console.log(contCarrusel);
+izquierda.addEventListener("click", () => {
   contCarrusel -= 1;
-  console.log(contCarrusel);
+  if (contCarrusel < 0) contCarrusel = currentImgsCarrusel.length - 1;
+
   let im = document.createElement("img");
   im.setAttribute("src", `imgs/${currentImgsCarrusel[contCarrusel]}`);
-  im.setAttribute("id", `im-carrusel`);
+  im.setAttribute("id", "im-carrusel");
+
   let imm = document.getElementById("im-carrusel");
   carrusel.replaceChild(im, imm);
-
-  if (contCarrusel < 0) {
-    contCarrusel = 4;
-    im.setAttribute("src", `imgs/${imgsCarrusel[4]}`);
-    im.setAttribute("id", `im-carrusel`);
-    carrusel.replaceChild(im, imm);
-  }
 });
 
+// Dibujar habitaciones
 let contHabitaciones = document.getElementById("cont-habitaciones");
 
 const dibujarHabitaciones = (elemHtml) => {
   elemHtml.innerHTML = "";
-  fetch("../data-base/habitaciones.json")
+  fetch("https://servidor-j7p3.onrender.com/habitaciones")
     .then((response) => response.json())
     .then((data) =>
-      data.habitaciones.forEach((habitacion, index) => {
-        if (sessionStorage.getItem("email")) {
-          elemHtml.innerHTML += `
-              <div
-                class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src="${habitacion.img}"
-                  alt="${habitacion.descripcion}"
-                  class="w-full h-48 object-cover img-habitacion"
-                />
-                <div class="p-4">
-                  <h3 class="text-xl font-bold text-gray-800 mb-2">
-                    ${habitacion.titulo}
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    ${habitacion.descripcion}
-                  </p>
-                  <ul class="text-sm text-gray-500">
-                    <li>✔ Wi-Fi</li>
-                    <li>✔ TV</li>
-                    <li>✔ Baño privado</li>
-                  </ul>
-                  <h3 class="text-xl font-bold text-green-800 mb-2 my-2">
-                    ${habitacion.precio}
-                  </h3>
-                </div>
-                <div class="p-3 flex justify-center">
-                  <button class="permitir-reservar bg-violet-500 text-white font-semibold rounded px-4 py-2 hover:bg-blue-600 transition-colors duration-300" id="reservar-${index}">
-                    Reservar
-                  </button>
-                </div>
-              </div>`;
-        } else {
-          elemHtml.innerHTML += `
-              <div
-                class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src="${habitacion.img}"
-                  alt="${habitacion.descripcion}"
-                  class="w-full h-48 object-cover img-habitacion"
-                />
-                <div class="p-4">
-                  <h3 class="text-xl font-bold text-gray-800 mb-2">
-                    ${habitacion.titulo}
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    ${habitacion.descripcion}
-                  </p>
-                  <ul class="text-sm text-gray-500">
-                    <li>✔ Wi-Fi</li>
-                    <li>✔ TV</li>
-                    <li>✔ Baño privado</li>
-                  </ul>
-                  <h3 class="text-xl font-bold text-green-800 mb-2 my-2">
-                    ${habitacion.precio}
-                  </h3>
-                </div>
-                <div class="p-3 flex justify-center">
-                  <button class="reservar bg-violet-500 text-white font-semibold rounded px-4 py-2 hover:bg-blue-600 transition-colors duration-300" id="reservar-${index}">
-                    Reservar
-                  </button>
-                </div>
-              </div>`;
-        }
+      data.forEach((habitacion, index) => {
+        const botonClass = sessionStorage.getItem("email")
+          ? "permitir-reservar"
+          : "reservar";
+
+        elemHtml.innerHTML += `
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+            <img
+              src="${habitacion.img}"
+              alt="${habitacion.descripcion}"
+              class="w-full h-48 object-cover img-habitacion"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">${habitacion.titulo}</h3>
+              <p class="text-gray-600 text-sm mb-4">${habitacion.descripcion}</p>
+              <ul class="text-sm text-gray-500">
+                <li>✔ Wi-Fi</li>
+                <li>✔ TV</li>
+                <li>✔ Baño privado</li>
+              </ul>
+              <h3 class="text-xl font-bold text-green-800 mb-2 my-2">${habitacion.precio}</h3>
+            </div>
+            <div class="p-3 flex justify-center">
+              <button class="${botonClass} bg-violet-500 text-white font-semibold rounded px-4 py-2 hover:bg-blue-600 transition-colors duration-300" id="reservar-${index}">
+                Reservar
+              </button>
+            </div>
+          </div>`;
       })
     );
 };
 
+// Dibujar servicios
 let contServicios = document.getElementById("cont-servicios");
 
-const dibujarServicios = (elemHtml) => {
+const dibujarServicios = async (elemHtml) => {
   elemHtml.innerHTML = "";
-  fetch("../data-base/habitaciones.json")
-    .then((response) => response.json())
-    .then((data) =>
-      data.servicios.forEach((servicio) => {
-        elemHtml.innerHTML += `
-              <div
-                class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src="${servicio.img}"
-                  alt="${servicio.descripcion}"
-                  class="w-full h-48 object-cover img-servicio"
-                />
-                <div class="p-4">
-                  <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">
-                    ${servicio.descripcion}
-                  </h3>
-                </div>
-              </div>`;
-      })
+  try {
+    const response = await fetch(
+      "https://servidor-j7p3.onrender.com/servicios"
     );
+    const servicios = await response.json();
+
+    servicios.forEach((servicio) => {
+      elemHtml.innerHTML += `
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <img
+            src="${servicio.img}"
+            alt="${servicio.descripcion}"
+            class="w-full h-48 object-cover img-servicio"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">${servicio.descripcion}</h3>
+          </div>
+        </div>`;
+    });
+  } catch (error) {
+    elemHtml.innerHTML = `<p class="text-red-500">Error al cargar servicios.</p>`;
+    console.error("Error cargando servicios:", error);
+  }
 };
 
+// Ejecutar funciones al cargar
 dibujarHabitaciones(contHabitaciones);
 dibujarServicios(contServicios);
 
+// Mostrar modal de inicio si no ha iniciado sesion
 const modal = document.getElementById("myModal");
-
 const span = document.getElementsByClassName("close")[0];
 
 window.addEventListener("click", (e) => {
@@ -198,17 +158,18 @@ window.addEventListener("click", (e) => {
   }
 });
 
-span.onclick = function () {
+span.onclick = () => {
   modal.style.display = "none";
 };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
+window.onclick = (event) => {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
 };
 
-//registro
+// registro de usuario
+
 const formuRegistro = document.getElementById("formuRegistro");
 
 formuRegistro.addEventListener("submit", (e) => {
@@ -218,7 +179,6 @@ formuRegistro.addEventListener("submit", (e) => {
   let contraRegistro = document
     .getElementById("contraseñaRegistro")
     .value.trim();
-  console.log(emailRegistro, contraRegistro);
 
   let usuario = {
     correo: emailRegistro,
@@ -233,37 +193,24 @@ formuRegistro.addEventListener("submit", (e) => {
     fetch("https://servidor-j7p3.onrender.com/usuarios")
       .then((response) => response.json())
       .then((data) => {
-        if (data.length == 0) {
+        const yaExiste = data.find((u) => u.correo === emailRegistro);
+        if (yaExiste) {
+          pAviso.innerHTML = `<p>El usuario ${emailRegistro} ya está registrado</p>`;
+        } else {
           fetch("https://servidor-j7p3.onrender.com/usuarios", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario),
           })
-            .then((respuesta) => respuesta.json())
-            .then((lista) => console.log(lista));
-        } else {
-          for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-            if (element.correo == emailRegistro) {
-              console.log("ya existe");
-              pAviso.innerHTML += `<p>El usuario ${emailRegistro} ya esta registrado</p>`;
-            } else {
-              fetch("https://servidor-j7p3.onrender.com/usuarios", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(usuario),
-              })
-                .then((respuesta) => respuesta.json())
-                .then((lista) => console.log(lista));
-              break;
-            }
-          }
+            .then((res) => res.json())
+            .then((data) => console.log("Usuario registrado:", data));
         }
       });
   }
 });
 
-// Función de inicio de sesión
+// inicio sesion
+
 const formuInicio = document.getElementById("formuInicio");
 let esqRegistro = document.getElementById("esquina-registrar");
 let esqInicio = document.getElementById("esquina-sesion");
@@ -294,7 +241,7 @@ formuInicio.addEventListener("submit", (e) => {
   }
 });
 
-// Mostrar el formulario de reserva solo si el usuario está logueado
+// formulario de reserva si ya inicio sesion
 const modalReserva = document.getElementById("modalReserva");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -325,13 +272,13 @@ const mostrarFormReserva = (modalReserva) => {
   }
 };
 
-//
-// Función para renderizar el formulario de reservas
+// dibujar formulario de reserva
+
 const dibujarFormReservas = (comparador, form) => {
-  fetch("../data-base/habitaciones.json")
+  fetch("https://servidor-j7p3.onrender.com/habitaciones")
     .then((response) => response.json())
     .then((data) => {
-      data.habitaciones.forEach((habitacion) => {
+      data.forEach((habitacion) => {
         if (comparador + 1 == habitacion.id) {
           form.innerHTML = `
             <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
@@ -342,7 +289,7 @@ const dibujarFormReservas = (comparador, form) => {
               <p class="text-orange-500 text-sm mb-2">Máx. Personas: ${habitacion.capacidad}</p>
               <p class="text-orange-500 text-sm mb-2">Disponible: Sí</p>
               <p class="text-green-500 text-lg font-semibold mb-4">${habitacion.precio} por noche</p>
-                          <p class="text-gray-600 mb-3">Check in entrada: 5:00 pm</p>
+              <p class="text-gray-600 mb-3">Check in entrada: 5:00 pm</p>
               <p class="text-gray-600 mb-3">Check in salida: 2:00 pm</p>
 
               <form id="formReserva" class="space-y-4">
@@ -365,15 +312,13 @@ const dibujarFormReservas = (comparador, form) => {
             .addEventListener("click", () => {
               form.classList.add("hidden");
             });
-
-          return;
         }
       });
     })
     .catch((error) => console.error("Error cargando habitaciones:", error));
 };
 
-// Evento para manejar la confirmación de reservas
+// manejo de la confirmacion de reservas
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("confirmar-reserva")) {
     e.preventDefault();
@@ -386,9 +331,9 @@ document.addEventListener("click", async (e) => {
         return;
       }
 
-      // Obtener los datos del formulario
+      // obtener los datos del formulario
       const usuarioCorreo = sessionStorage.getItem("email");
-      const tituloHabitacion = tituloElement.textContent; // Usar textContent para obtener el texto del h2
+      const tituloHabitacion = tituloElement.textContent;
       const fechaEntrada = document.getElementById(
         "fechaComienzoReserva"
       ).value;
@@ -399,7 +344,7 @@ document.addEventListener("click", async (e) => {
         return;
       }
 
-      // fetch de usuarios y habitaciones desde el servidor
+      // fetch de usuarios y habitaciones
       const [usuariosResponse, habitacionesResponse] = await Promise.all([
         fetch("https://servidor-j7p3.onrender.com/usuarios"),
         fetch("https://servidor-j7p3.onrender.com/habitaciones"),
@@ -422,69 +367,78 @@ document.addEventListener("click", async (e) => {
         (h) => h.titulo === tituloHabitacion && h.disponible
       );
 
-      if (habitacion) {
-        const fechasOcupadas = habitacion.fechas.some(
-          (f) =>
-            (fechaEntrada >= f.fecha_entrada &&
-              fechaEntrada <= f.fecha_salida) ||
-            (fechaSalida >= f.fecha_entrada && fechaSalida <= f.fecha_salida)
-        );
-
-        if (fechasOcupadas) {
-          console.log(
-            "La habitación no está disponible en las fechas solicitadas."
-          );
-          return;
-        }
-
-        // Agregar la reserva
-        if (!usuario.reservas) usuario.reservas = [];
-        usuario.reservas.push({
-          habitacion_id: habitacion.id,
-          fecha_entrada: fechaEntrada,
-          fecha_salida: fechaSalida,
-        });
-
-        if (!habitacion.fechas) habitacion.fechas = [];
-        habitacion.fechas.push({
-          fecha_entrada: fechaEntrada,
-          fecha_salida: fechaSalida,
-        });
-
-        await Promise.all([
-          fetch(`https://servidor-j7p3.onrender.com/usuarios/${usuario.id}`, {
-            method: "PUT",
-            body: JSON.stringify(usuario),
-            headers: { "Content-Type": "application/json" },
-          }),
-          fetch(
-            `https://servidor-j7p3.onrender.com/habitaciones/${habitacion.id}`,
-            {
-              method: "PUT",
-              body: JSON.stringify(habitacion),
-              headers: { "Content-Type": "application/json" },
-            }
-          ),
-        ]);
-
-        console.log(
-          `Reserva confirmada para el usuario ${usuarioCorreo} en la habitación ${tituloHabitacion} desde ${fechaEntrada} hasta ${fechaSalida}`
-        );
-      } else {
+      if (!habitacion) {
         console.log(
           "No hay habitaciones disponibles con el título solicitado."
         );
+        return;
       }
+
+      // verificar si las fechas ya estan ocupadas
+      const fechasOcupadas = (habitacion.fechas || []).some(
+        (f) =>
+          (fechaEntrada >= f.fecha_entrada && fechaEntrada <= f.fecha_salida) ||
+          (fechaSalida >= f.fecha_entrada && fechaSalida <= f.fecha_salida) ||
+          (fechaEntrada <= f.fecha_entrada && fechaSalida >= f.fecha_salida)
+      );
+
+      if (fechasOcupadas) {
+        console.log(
+          "La habitación no está disponible en las fechas solicitadas."
+        );
+        return;
+      }
+
+      // agregar la reserva al usuario
+      if (!usuario.reservas) usuario.reservas = [];
+      usuario.reservas.push({
+        habitacion_id: habitacion.id,
+        fecha_entrada: fechaEntrada,
+        fecha_salida: fechaSalida,
+      });
+
+      // agregar la reserva a la habitacion
+      if (!habitacion.fechas) habitacion.fechas = [];
+      habitacion.fechas.push({
+        fecha_entrada: fechaEntrada,
+        fecha_salida: fechaSalida,
+      });
+
+      // Actualizar en el servidor
+      await Promise.all([
+        fetch(`https://servidor-j7p3.onrender.com/usuarios/${usuario.id}`, {
+          method: "PUT",
+          body: JSON.stringify(usuario),
+          headers: { "Content-Type": "application/json" },
+        }),
+        fetch(
+          `https://servidor-j7p3.onrender.com/habitaciones/${habitacion.id}`,
+          {
+            method: "PUT",
+            body: JSON.stringify(habitacion),
+            headers: { "Content-Type": "application/json" },
+          }
+        ),
+      ]);
+
+      console.log(
+        `Reserva confirmada para ${usuarioCorreo} en la habitación "${tituloHabitacion}" desde ${fechaEntrada} hasta ${fechaSalida}`
+      );
+
+      alert("¡Reserva confirmada!");
+      document.getElementById("modalReserva").classList.add("hidden");
     } catch (error) {
       console.error("Error al realizar la reserva:", error);
+      alert("Ocurrió un error al realizar la reserva. Inténtalo más tarde.");
     }
   }
 });
 
-// Bloquear fechas reservadas
+// bloquear fechas ya reservadas en los inputs
+
 function bloquearFechasReservadas(habitaciones) {
   habitaciones.forEach((habitacion) => {
-    habitacion.reservas.forEach((reserva) => {
+    (habitacion.reservas || []).forEach((reserva) => {
       let option = document.createElement("option");
       option.value = reserva.llegada;
       option.text = `No disponible: ${new Date(
