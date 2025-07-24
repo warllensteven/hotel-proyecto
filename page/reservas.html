@@ -8,7 +8,7 @@
       href="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
       type="image/x-icon"
     />
-    <title>Hotel el Rincon de Camila</title>
+    <title>Hotel el Rincon de Ximena</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -27,7 +27,7 @@
             />
           </a>
           <h2 class="titulo-hotel text-sm/6 font-semibold">
-            HOTEL EL RINCON DE CAMILA
+            HOTEL EL RINCON DE XIMENA
           </h2>
         </div>
         <div class="flex lg:hidden">
@@ -55,7 +55,9 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="../index.html" class="opc text-sm/6 font-semibold text-gray-900"
+          <a
+            href="../index.html"
+            class="opc text-sm/6 font-semibold text-gray-900"
             >Inicio</a
           >
           <a
@@ -81,9 +83,11 @@
             id="esquina-registrar"
             >Registrarse<span aria-hidden="true"></span
           ></a>
-          <a href="#" class="reservar opc text-sm/6 font-semibold text-gray-900"
-          id="esquina-sesion"
-            >Iniciar sesion <span aria-hidden="true">&rarr;</span></a
+          <a
+            href="#"
+            class="reservar opc text-sm/6 font-semibold text-gray-900"
+            id="esquina-sesion"
+            >Iniciar sesion <span aria-hidden="true">→</span></a
           >
         </div>
       </nav>
@@ -149,7 +153,7 @@
                   >Sobre nosotros</a
                 >
               </div>
-                            <div class="py-6">
+              <div class="py-6">
                 <a
                   href="#"
                   class="reservar -mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
@@ -168,102 +172,117 @@
         </div>
       </div>
     </header>
-          <section class="py-14 px-8 sm:py-32 cont-formu-reservar">
-  <div class="mx-auto px-2 lg:px-4 cont-reservar bg-violet-600">
-    <form
-      class="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-1 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-6"
-      id="formuReserva"
-    >
-      <div class="flex flex-row justify-center lg:px-8">
-        <div class="flex items-center justify-between">
-          <label
-            for="cantPersonas"
-            class="block text-sm font-mex text-white px-2 font-semibold"
-          >N. personas: </label>
-        </div>
-        <div class="mt-2">
-          <input
-            type="number"
-            name="cantPersonas"
-            id="cantPersonas"
-            required
-            class="font-semibold block w-full rounded-md px-3 py-1.5 text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
-          />
-        </div>
-      </div>
-
-      <div class="flex flex-row justify-center lg:px-8">
-        <div class="flex items-center justify-between">
-          <label
-            for="llegada"
-            class="block text-sm text-white px-2 font-semibold"
-          >Llegada: </label>
-        </div>
-        <div class="mt-2">
-          <input
-            type="date"
-            name="llegada"
-            id="llegada"
-            required
-            class="font-semibold block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
-          />
-        </div>
-      </div>
-
-      <div class="flex flex-row justify-center lg:px-8">
-        <div class="flex items-center justify-between">
-          <label
-            for="salida"
-            class="block text-sm text-white font-semibold"
-          >Salida:</label>
-        </div>
-        <div class="mt-2">
-          <input
-            type="date"
-            name="salida"
-            id="salida"
-            required
-            class="font-semibold block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
-          />
-        </div>
-      </div>
-
-      <div id="aviso" class="text-red-600"></div>
-      
-      <button
-        type="submit"
-        class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-400 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+    <section class="pt-14 pt-32 sm:pt-32 px-8 cont-formu-reservar pb-6">
+      <div class="mx-auto px-2 lg:px-4 cont-reservar bg-violet-600">
+        <form
+          class="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-1 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-6"
+          id="formuReserva"
         >
-        Buscar
-      </button>
-    </form>
-  </div>
-</section>
+          <div class="flex flex-row justify-center lg:px-8">
+            <div class="flex items-center justify-between">
+              <label
+                for="cantPersonas"
+                class="block text-sm font-mex text-white px-2 font-semibold"
+                >N. personas:
+              </label>
+            </div>
+            <div class="mt-2">
+              <input
+                type="number"
+                name="cantPersonas"
+                id="cantPersonas"
+                required
+                class="font-semibold block w-full rounded-md px-3 py-1.5 text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+              />
+            </div>
+          </div>
 
-    
-    <main class="relative isolate px-4 pt-14 lg:px-6">
+          <div class="flex flex-row justify-center lg:px-8">
+            <div class="flex items-center justify-between">
+              <label
+                for="llegada"
+                class="block text-sm text-white px-2 font-semibold"
+                >Llegada:
+              </label>
+            </div>
+            <div class="mt-2">
+              <input
+                type="date"
+                name="llegada"
+                id="llegada"
+                required
+                class="font-semibold block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-row justify-center lg:px-8">
+            <div class="flex items-center justify-between">
+              <label for="salida" class="block text-sm text-white font-semibold"
+                >Salida:</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                type="date"
+                name="salida"
+                id="salida"
+                required
+                class="font-semibold block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+              />
+            </div>
+          </div>
+
+          <div id="aviso" class="text-red-600"></div>
+
+          <button
+            type="submit"
+            class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-400 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+          >
+            Buscar
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <div class="px-8 cont-formu-reservar">
+      <button
+        id="misReservasBtn"
+        class="bg-violet-600 text-white font-semibold rounded-lg px-6 py-2 hover:bg-violet-400 transition-colors duration-300"
+      >
+        Mis Reservas
+      </button>
+      <div id="reservasSection" class="mt-4"></div>
+    </div>
+
+    <main class="relative isolate px-4 mt-0 lg:px-6">
       <div
         class="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-6"
         id="cont-habitaciones"
       ></div>
     </main>
 
-    <section class="relative isolate px-4 pt-14 lg:px-6" id="resultado"></section>
-
-    <section id="modalReserva" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      
+    <section
+      id="modalReserva"
+      class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+    >
+      <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
+        <span
+          id="closeModal"
+          class="absolute top-2 right-2 text-xl font-bold text-gray-500 cursor-pointer"
+          >×</span
+        >
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">
+          Reservar Habitación
+        </h2>
+      </div>
     </section>
-
-    <section id="tusreservas" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-
-    </section>
-
 
     <footer class="bg-violet-600 text-white py-6">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-sm font-semibold">
-            &copy; 2025 Hotel El Rincon De Camila. Todos los derechos reservados
+            © 2025 Hotel El Rincon De XIMENA. Todos los derechos reservados
           </p>
           <ul class="flex space-x-4 mt-4 md:mt-0">
             <li>
@@ -283,6 +302,143 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal inicio sesion -->
+    <div
+      id="modalInicio"
+      class="modal hidden fixed inset-0 bg-black/50 z-50 flex justify-center items-center"
+    >
+      <div
+        class="modal-content bg-white rounded-xl p-8 w-full max-w-md relative"
+      >
+        <span
+          class="close absolute top-2 right-3 text-2xl cursor-pointer text-gray-500 hover:text-gray-800"
+          aria-label="Cerrar modal"
+          >×</span
+        >
+        <div class="text-center">
+          <img
+            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+            alt="Logo Hotel"
+            class="w-20 mx-auto mb-3"
+          />
+          <h2 class="text-sm font-semibold text-gray-700 uppercase">
+            Hotel El Rincón de XIMENA
+          </h2>
+        </div>
+        <h2 class="text-xl font-bold mt-4 mb-2">Inicia sesión con tu cuenta</h2>
+        <form id="formuInicio" class="space-y-4">
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Correo electrónico</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="Correo electrónico"
+              class="w-full border border-gray-300 p-2 rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="contraseña"
+              class="block text-sm font-medium text-gray-700"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              id="contraseña"
+              placeholder="Contraseña"
+              class="w-full border border-gray-300 p-2 rounded-md"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full py-2 bg-violet-600 text-white rounded-md font-bold hover:bg-violet-700 transition"
+          >
+            Iniciar sesión
+          </button>
+          <div class="text-center mt-4">
+            <button
+              class="abrir-Registro w-full py-2 bg-violet-600 text-white rounded-md font-bold hover:bg-violet-700 transition"
+            >
+              Registrarse
+            </button>
+          </div>
+          <p class="text-xs text-center mt-2 text-gray-500">
+            ¿Olvidaste tu contraseña?
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- modal registro -->
+    <div
+      id="modalRegistro"
+      class="modal hidden fixed inset-0 bg-black/50 z-50 flex justify-center items-center"
+    >
+      <div
+        class="modal-content bg-white rounded-xl p-8 w-full max-w-md relative"
+      >
+        <span
+          class="close-registro absolute top-2 right-3 text-2xl cursor-pointer text-gray-500 hover:text-gray-800"
+          aria-label="Cerrar modal"
+          >×</span
+        >
+        <div class="text-center">
+          <img
+            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+            alt="Logo Hotel"
+            class="w-20 mx-auto mb-3"
+          />
+          <h2 class="text-sm font-semibold text-gray-700 uppercase">
+            Hotel El Rincón de XIMENA
+          </h2>
+        </div>
+        <h2 class="text-xl font-bold mt-4 mb-2">Regístrate con tu cuenta</h2>
+        <form id="formuRegistro" class="space-y-4 flex flex-col">
+          <div>
+            <label
+              for="emailRegistro"
+              class="block text-sm font-medium text-gray-700"
+              >Correo electrónico</label
+            >
+            <input
+              type="email"
+              id="emailRegistro"
+              placeholder="Correo electrónico"
+              class="w-full border border-gray-300 p-2 rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="contraseñaRegistro"
+              class="block text-sm font-medium text-gray-700"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              id="contraseñaRegistro"
+              placeholder="Contraseña"
+              class="w-full border border-gray-300 p-2 rounded-md"
+              required
+            />
+          </div>
+          <div class="flex-grow mt-32"></div>
+          <button
+            type="submit"
+            class="w-full py-2 bg-violet-600 text-white rounded-md font-bold hover:bg-violet-700 transition"
+          >
+            Registrarse
+          </button>
+        </form>
+        <p id="aviso" class="text-center text-red-500 mt-3 text-sm"></p>
+      </div>
+    </div>
+
     <div class="fixed bottom-4 right-4">
       <a
         href="https://wa.me/1234567890"
@@ -307,172 +463,18 @@
       </a>
     </div>
 
-<div class="modal" id="myModal">
-      <div class="modal-content">
-        <button class="close close btn-close flex my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><span>X</span></button>
-        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-          <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-            <div class="flex flex-row text-center">          
-              <a href="#" class="-m-1.5 p-1.5">
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
-          <h2 class="titulo-hotel text-sm/6 font-semibold my-2">
-            HOTEL EL RINCON DE CAMILA
-          </h2></div>
-            <h2
-              class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900"
-            >
-              Inicia sesion con tu cuenta
-            </h2>
-          </div>
-
-          <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="#" method="POST" id="formuInicio">
-              <div>
-                <label
-                  for="email"
-                  class="block text-sm/6 font-medium text-gray-900"
-                  >Correo electronico</label
-                >
-                <div class="mt-2">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autocomplete="email"
-                    required
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <div class="flex items-center justify-between">
-                  <label
-                    for="contraseña"
-                    class="block text-sm/6 font-medium text-gray-900"
-                    >Contraseña</label
-                  >
-                </div>
-                <div class="mt-2">
-                  <input
-                    type="password"
-                    name="password"
-                    id="contraseña"
-                    autocomplete="current-password"
-                    required
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
-
-              <div class="my-4">
-                <button
-                  type="submit"
-                  class="flex w-full justify-center rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
-                >
-                  Iniciar sesion
-                </button>
-              </div>
-
-              <div>
-                <div
-                  class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
-                >
-                  Registrar
-                </div>
-              </div>
-            </form>
-
-            <p class="mt-10 text-center text-sm/6 text-gray-500">
-              Olvidaste tu contraseña?
-            </p>
-          </div>
-      </div>
-    </div>
-
-    <div class="modal-registro" id="modalRegistro">
-      <div class="modal-content">
-        <button class="close-registro btn-close-registro flex my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><span>X</span></button>
-        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-          <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-            <div class="flex flex-row text-center">          
-              <a href="#" class="-m-1.5 p-1.5">
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
-          <h2 class="titulo-hotel text-sm/6 font-semibold my-2">
-            HOTEL EL RINCON DE CAMILA
-          </h2></div>
-            <h2
-              class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900"
-            >
-              Registrate con tu cuenta
-            </h2>
-          </div>
-
-          <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="#" method="POST" id="formuRegistro">
-              <div>
-                <label
-                  for="emailRegistro"
-                  class="block text-sm/6 font-medium text-gray-900"
-                  >Correo electronico</label
-                >
-                <div class="mt-2">
-                  <input
-                    type="email"
-                    name="emailRegistro"
-                    id="emailRegistro"
-                    autocomplete="email"
-                    required
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <div class="flex items-center justify-between">
-                  <label
-                    for="contraseñaRegistro"
-                    class="block text-sm/6 font-medium text-gray-900"
-                    >Contraseña</label
-                  >
-                </div>
-                <div class="mt-2">
-                  <input
-                    type="password"
-                    name="contraseñaRegistro"
-                    id="contraseñaRegistro"
-                    autocomplete="current-password"
-                    required
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
-                </div>
-              </div>
-
-
-              <div>
-                <div id="aviso" class="text-red-600"></div>
-                <button
-                  type="submit"
-                  class="abrir-Registro flex w-full justify-center my-6 rounded-md bg-violet-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
-                >
-                  Registrar
-                </button>
-              </div>
-            </form>
-          </div>
-      </div>
-    </div>
+    <!-- modal reserva -->
+    <div
+      id="modalReserva"
+      class="modal hidden fixed inset-0 bg-black/50 z-50 flex justify-center items-center"
+    >
+      <div
+        class="modal-content bg-white rounded-xl p-8 w-full max-w-md relative"
+      ></div>
     </div>
   </body>
-  <script src="../js/reservas.js"></script>
+  <script type="module" src="../js/auth.js"></script>
+  <script type="module" src="../js/filtroHabitaciones.js"></script>
+  <script type="module" src="../js/reservas.js"></script>
+  <script type="module" src="../js/reservasUsuarios.js"></script>
 </html>

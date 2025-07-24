@@ -101,33 +101,40 @@ footer {
 }
 
 .modal {
-  position: relative;
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 50;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(219, 217, 219, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-  border-radius: 8px;
-  position: absolute;
-  top: 16%;
-  left: 29%;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 40%;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  width: 90%;
+  max-width: 28rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.modal:not(.hidden) {
+  display: flex;
+}
 .abrir-Registro {
   background-color: white;
   color: #4f46e5;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
 }
 
 .btn-close {
@@ -236,4 +243,27 @@ nav {
   .cont-formu-reservar {
     padding: 5%;
   }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.content {
+  padding-bottom: 2rem;
 }
