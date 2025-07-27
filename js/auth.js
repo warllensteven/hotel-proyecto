@@ -1,6 +1,6 @@
 export const API = "https://servidor-j7p3.onrender.com";
 
-// Elementos DOM para autenticación y modales
+// Elementos DOM
 const modalInicio = document.getElementById("modalInicio");
 const modalRegistro = document.getElementById("modalRegistro");
 const esqInicio = document.getElementById("esquina-sesion");
@@ -10,12 +10,8 @@ const formuRegistro = document.getElementById("formuRegistro");
 
 // Cerrar modales
 export function cerrarModal(modal) {
-  console.log("Intentando cerrar modal con ID:", modal?.id);
   if (modal) {
     modal.classList.add("hidden");
-    console.log("Modal cerrado, estado de clase:", modal.classList);
-  } else {
-    console.log("Modal no encontrado para cerrar");
   }
 }
 
@@ -62,18 +58,20 @@ formuRegistro?.addEventListener("submit", async (e) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuario),
       });
-      if (!response.ok) throw new Error("Error al registrar usuario");
-      cerrarModal(modalRegistro);
-      esqInicio?.classList.add("hidden");
-      esqRegistro?.classList.add("hidden");
+      if (response.ok) {
+        cerrarModal(modalRegistro);
+        esqInicio?.classList.add("hidden");
+        esqRegistro?.classList.add("hidden");
+      } else {
+        throw new Error("Error al registrar usuario");
+      }
     } catch (error) {
-      console.error("Error en el registro:", error);
       pAviso.innerHTML = `<p>Error al registrar. ${error.message}</p>`;
     }
   }
 });
 
-// Inicio de sesión
+// Inicio de sesion
 formuInicio?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value.trim();
@@ -96,14 +94,13 @@ formuInicio?.addEventListener("submit", async (e) => {
         alert("Contraseña incorrecta o usuario no registrado");
       }
     } catch (error) {
-      console.error("Error al iniciar sesión:", error);
       alert("Error al conectar con el servidor: " + error.message);
     }
   }
 });
 
-// Gestión de sesión y modales al cargar
-document.addEventListener("DOMContentLoaded", async () => {
+// Gestion de sesion y modales cuando se recargue o se cambie la pagina
+document.addEventListener("DOMContentLoaded", () => {
   const usuarioEmail = sessionStorage.getItem("email");
   if (usuarioEmail) {
     esqInicio?.classList.add("hidden");

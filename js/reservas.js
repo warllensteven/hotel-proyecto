@@ -1,48 +1,40 @@
 import { API, cerrarModal } from "./auth.js";
+import { filtrarHabitaciones } from "./filtroHabitaciones.js";
 
-// Función para mostrar el formulario de reserva
-window.mostrarFormReserva = (modal) => {
+// Funcion que muestra el formulario de reserva
+export function mostrarFormReserva(modal) {
   document.querySelectorAll(".permitir-reservar, .reservar").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       const habitacionId = parseInt(btn.id.replace("reservar-", ""));
       if (isNaN(habitacionId)) {
-        console.error("ID de habitación inválido:", btn.id);
+        console.error("ID de habitación invalido:", btn.id);
         return;
       }
 
       const usuarioCorreo = sessionStorage.getItem("email");
       if (!usuarioCorreo) {
-        alert("Debes iniciar sesión para reservar.");
+        alert("Debes iniciar sesion para reservar.");
         return;
       }
-
-      console.log(
-        "Usuario autenticado, abriendo modal de reserva para ID:",
-        habitacionId
-      );
       dibujarFormReservas(habitacionId, modal);
       modal.classList.remove("hidden");
     });
   });
 
-  // Cerrar modal de reserva
   window.addEventListener("click", (e) => {
     if (e.target.id === "modalReserva" || e.target.id === "closeModal") {
       cerrarModal(modal);
     }
   });
-};
+}
 
 const dibujarFormReservas = (habitacionId, modal) => {
   fetch(`${API}/habitaciones`)
     .then((response) => response.json())
     .then((data) => {
-      const habitaciones = data.habitaciones || data;
-      console.log("Datos de habitaciones:", habitaciones);
-      const habitacion = Array.isArray(habitaciones)
-        ? habitaciones.find((h) => h.id === habitacionId)
-        : (habitaciones.habitaciones || []).find((h) => h.id === habitacionId);
+      const habitaciones = data;
+      const habitacion = habitaciones.find((h) => h.id === habitacionId);
       if (habitacion) {
         modal.innerHTML = `
           <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
@@ -77,16 +69,15 @@ const dibujarFormReservas = (habitacionId, modal) => {
           manejarConfirmacionReserva(e, modal)
         );
       } else {
-        console.error("Habitación no encontrada con ID:", habitacionId);
         modal.innerHTML = `<p class="text-red-500">Habitación no disponible.</p>`;
       }
     })
     .catch((error) => console.error("Error cargando habitaciones:", error));
 };
 
+// funcion de gestion del formulario de reserva
 const manejarConfirmacionReserva = async (e, modal) => {
   e.preventDefault();
-  console.log("Intentando confirmar reserva...");
   const tipoHabitacion = document
     .getElementById("tipo-buscar")
     .textContent.trim()
@@ -99,13 +90,6 @@ const manejarConfirmacionReserva = async (e, modal) => {
   const fechaSalida = document.getElementById("salida").value;
   const usuarioCorreo = sessionStorage.getItem("email");
 
-  console.log("Datos de reserva:", {
-    usuarioCorreo,
-    tipoHabitacion,
-    cantPersonas,
-    fechaEntrada,
-    fechaSalida,
-  });
   if (
     !usuarioCorreo ||
     !cantPersonas ||
@@ -113,7 +97,7 @@ const manejarConfirmacionReserva = async (e, modal) => {
     !fechaEntrada ||
     !fechaSalida
   ) {
-    console.log("Faltan datos requeridos o inválidos");
+    console.log("Faltan datos requeridos o son invalidos");
     return;
   }
 
@@ -134,13 +118,7 @@ const manejarConfirmacionReserva = async (e, modal) => {
 
     const usuarios = await usuariosResponse.json();
     const habitacionesData = await habitacionesResponse.json();
-    const habitaciones = habitacionesData.habitaciones || habitacionesData;
-    console.log("Habitaciones recibidas:", habitaciones);
-
-    if (!Array.isArray(habitaciones)) {
-      console.error("Formato de habitaciones inválido:", habitaciones);
-      return;
-    }
+    const habitaciones = habitacionesData;
 
     const habitacionDisponible = habitaciones.find(
       (h) =>
@@ -149,13 +127,6 @@ const manejarConfirmacionReserva = async (e, modal) => {
         h.capacidad >= cantPersonas
     );
     if (!habitacionDisponible) {
-      console.log(
-        "No hay habitaciones disponibles de tipo:",
-        tipoHabitacion,
-        "para",
-        cantPersonas,
-        "personas"
-      );
       alert(
         "No hay habitaciones disponibles para las fechas o capacidad seleccionadas."
       );
@@ -164,7 +135,7 @@ const manejarConfirmacionReserva = async (e, modal) => {
 
     const usuario = usuarios.find((u) => u.correo === usuarioCorreo);
     if (!usuario) {
-      console.log("Usuario no encontrado");
+      alert("Usuario no encontrado");
       return;
     }
 
@@ -176,10 +147,7 @@ const manejarConfirmacionReserva = async (e, modal) => {
     );
 
     if (fechasOcupadas) {
-      console.log(
-        "La habitación no está disponible en las fechas solicitadas."
-      );
-      alert("La habitación no está disponible en las fechas solicitadas.");
+      alert("La habitacion no esta disponible en las fechas solicitadas.");
       return;
     }
 
@@ -210,20 +178,15 @@ const manejarConfirmacionReserva = async (e, modal) => {
         headers: { "Content-Type": "application/json" },
       }),
     ]);
-
-    console.log(
-      `Reserva confirmada para ${usuarioCorreo} en la habitación ${habitacionDisponible.id} desde ${fechaEntrada} hasta ${fechaSalida}`
-    );
     alert("¡Reserva confirmada!");
     cerrarModal(modal);
-    window.filtrarHabitaciones(); // Actualizar listado
+    filtrarHabitaciones();
   } catch (error) {
-    console.error("Error al realizar la reserva:", error);
     alert("Ocurrió un error al realizar la reserva. Inténtalo más tarde.");
   }
 };
 
-// Asegurar que el evento de cierre del modal de reserva funcione
+// funcion de cirre de modal de reserva
 document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.getElementById("closeModal");
   if (closeModal) {
